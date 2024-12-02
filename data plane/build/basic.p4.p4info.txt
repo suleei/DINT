@@ -1,0 +1,158 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 37375156
+    name: "MyIngress.ipv4_lpm"
+    alias: "ipv4_lpm"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: LPM
+  }
+  action_refs {
+    id: 28792405
+  }
+  action_refs {
+    id: 25652968
+  }
+  size: 1024
+}
+actions {
+  preamble {
+    id: 25652968
+    name: "MyIngress.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 28792405
+    name: "MyIngress.ipv4_forward"
+    alias: "ipv4_forward"
+  }
+  params {
+    id: 1
+    name: "dstAddr"
+    bitwidth: 48
+  }
+  params {
+    id: 2
+    name: "port"
+    bitwidth: 9
+  }
+  params {
+    id: 3
+    name: "suffix"
+    bitwidth: 6
+  }
+}
+actions {
+  preamble {
+    id: 22191446
+    name: "MyIngress.calculate_sketch_index"
+    alias: "calculate_sketch_index"
+  }
+}
+actions {
+  preamble {
+    id: 19835258
+    name: "MyIngress.calculate_bloom_filter_index"
+    alias: "calculate_bloom_filter_index"
+  }
+}
+registers {
+  preamble {
+    id: 370004605
+    name: "MyIngress.mec_port_reg1"
+    alias: "mec_port_reg1"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 9
+      }
+    }
+  }
+  size: 100000
+}
+registers {
+  preamble {
+    id: 379120019
+    name: "MyIngress.mec_port_reg2"
+    alias: "mec_port_reg2"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 9
+      }
+    }
+  }
+  size: 100000
+}
+registers {
+  preamble {
+    id: 374410500
+    name: "MyIngress.mec_port_reg3"
+    alias: "mec_port_reg3"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 9
+      }
+    }
+  }
+  size: 100000
+}
+registers {
+  preamble {
+    id: 378543917
+    name: "MyIngress.sp_port_reg1"
+    alias: "sp_port_reg1"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 9
+      }
+    }
+  }
+  size: 100000
+}
+registers {
+  preamble {
+    id: 369671198
+    name: "MyIngress.sp_port_reg2"
+    alias: "sp_port_reg2"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 9
+      }
+    }
+  }
+  size: 100000
+}
+registers {
+  preamble {
+    id: 380888923
+    name: "MyIngress.sp_port_reg3"
+    alias: "sp_port_reg3"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 9
+      }
+    }
+  }
+  size: 100000
+}
+type_info {
+}
